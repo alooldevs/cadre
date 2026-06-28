@@ -1,0 +1,3 @@
+# local install backups
+*.cadre-bak.*
+.DS_Store
