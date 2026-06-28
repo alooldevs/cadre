@@ -19,9 +19,13 @@ sessions — is an overloaded manager with no team and no memory. Cadre gives it
 - **Honest & right-sized.** Code is the source of truth; status is never trusted from stale checkboxes; tools
   are sized to the job.
 
+## Requirements
+- [Claude Code](https://docs.claude.com/en/docs/claude-code) installed (terminal, desktop, or an IDE
+  extension — Cadre detects the host). The model is tool-agnostic; more hosts over time.
+
 ## Install
 ```sh
-git clone <repo-url> ~/Documents/tools/cadre   # or anywhere
+git clone https://github.com/alooldevs/cadre.git ~/Documents/tools/cadre   # or anywhere
 cd ~/Documents/tools/cadre && ./install.sh
 ```
 This lays the operating model into `~/.claude/` (backing up anything it would replace; it won't overwrite a
@@ -55,4 +59,13 @@ claude/                 # overlay installed into ~/.claude/
 install.sh
 ```
 
-Beta. Built from real use across real projects. Feedback welcome.
+## Uninstall / revert
+`install.sh` never deletes — it backs up anything it replaces as `*.cadre-bak.*` inside `~/.claude/`.
+To revert, restore those backups (and remove the files Cadre added).
+
+## Feedback
+Beta, built from real use across real projects. Issues and ideas welcome:
+https://github.com/alooldevs/cadre/issues
+
+— maintained by [Alool Technologies](https://github.com/alooldevs)
+
