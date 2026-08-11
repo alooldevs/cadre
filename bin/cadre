@@ -1,0 +1,176 @@
+#!/usr/bin/env bash
+# cadre — the command. A thin router over the two installers plus a drift check.
+# No versions, no lockfiles, no network: the repos are the source of truth,
+# ~/.claude is the disposable installed copy.
+set -euo pipefail
+
+# Resolve symlinks ($0 is usually a PATH symlink) so REPO is the real repo root.
+real="$(python3 -c 'import os,sys; print(os.path.realpath(sys.argv[1]))' "$0")"
+SELF="$(cd "$(dirname "$real")" && pwd)"
+REPO="$(dirname "$SELF")"
+CONFIG="$HOME/.claude/cadre.json"
+
+cfg_get() {
+  python3 -c "import json,sys,os
+p=os.path.expanduser('~/.claude/cadre.json')
+try: print(json.load(open(p)).get(sys.argv[1],''))
+except Exception: print('')" "$1"
+}
+
+packs_repo() {
+  pr="$(cfg_get packs_repo)"
+  if [ -z "$pr" ] || [ ! -d "$pr" ]; then
+    for cand in "$REPO/../packs" "$HOME/Documents/tools/packs"; do
+      if [ -d "$cand" ]; then pr="$(cd "$cand" && pwd)"; break; fi
+    done
+  fi
+  printf '%s' "${pr:-}"
+}
+
+usage() {
+  cat <<'EOF'
+cadre — portable AI operating model
+
+  cadre install    lay the core into ~/.claude, then offer each available pack
+  cadre sync       re-lay core + installed packs from the repos (no prompts)
+  cadre status     drift report: has a repo changed since the last lay-down?
+  cadre packs      list packs: available in the packs repo vs installed
+  cadre help       this
+
+Repos (from ~/.claude/cadre.json, written at install):
+  cadre_repo       where the core lives
+  packs_repo       where the packs live
+EOF
+}
+
+cmd="${1:-help}"
+case "$cmd" in
+
+  install)
+    "$REPO/install.sh"
+    pr="$(packs_repo)"
+    if [ -z "$pr" ]; then
+      echo ""
+      echo "No packs repo found. Clone it, then re-run:  git clone git@github.com:alooldevs/packs.git"
+      exit 0
+    fi
+    echo ""
+    echo "Packs available in $pr:"
+    for d in "$pr"/*/; do
+      [ -d "$d" ] || continue
+      name=$(basename "$d")
+      if [ -d "$HOME/.claude/packs/$name" ]; then
+        echo "  $name — already installed (cadre sync refreshes it)"
+      elif [ -t 0 ]; then
+        printf "  %s — install? [y/N] " "$name"
+        read -r ans || ans=n
+        case "$ans" in
+          y|Y) "$pr/install.sh" "$name" ;;
+          *)   echo "    skipped" ;;
+        esac
+      else
+        echo "  $name — available (non-interactive shell; install with: $pr/install.sh $name)"
+      fi
+    done
+    ;;
+
+  sync)
+    "$REPO/install.sh"
+    pr="$(packs_repo)"
+    if [ -n "$pr" ] && [ -d "$HOME/.claude/packs" ]; then
+      names=""
+      for d in "$HOME/.claude/packs"/*/; do
+        [ -d "$d" ] || continue
+        name=$(basename "$d")
+        [ -d "$pr/$name" ] && names="$names $name"
+      done
+      # shellcheck disable=SC2086
+      [ -n "$names" ] && "$pr/install.sh" $names
+    fi
+    echo ""
+    "$SELF/cadre" status
+    ;;
+
+  status)
+    quiet=0
+    [ "${2:-}" = "--quiet" ] && quiet=1
+    python3 - "$REPO" "$(packs_repo)" "$quiet" <<'PY'
+import hashlib, json, os, sys
+
+repo, packs_repo, quiet = sys.argv[1], sys.argv[2], sys.argv[3] == "1"
+home = os.path.expanduser("~/.claude")
+
+def tree_hashes(src):
+    out = {}
+    for dp, _, fns in os.walk(src):
+        if "__pycache__" in dp:
+            continue
+        for fn in fns:
+            if fn == ".DS_Store" or fn.endswith(".pyc"):
+                continue
+            f = os.path.join(dp, fn)
+            out[os.path.relpath(f, src)] = hashlib.md5(open(f, "rb").read()).hexdigest()
+    return out
+
+def load(p):
+    try:
+        return json.load(open(p))
+    except Exception:
+        return None
+
+drift = []
+
+man = load(os.path.join(home, ".cadre-manifest.json"))
+if man is None:
+    drift.append("core: never installed by this tooling (run: cadre install)")
+else:
+    now = tree_hashes(os.path.join(repo, "claude"))
+    changed = [r for r in now if now[r] != man.get(r)] + [r for r in man if r not in now]
+    if changed:
+        drift.append("core: %d file(s) changed in the repo since the last lay-down (e.g. %s)"
+                     % (len(changed), ", ".join(sorted(changed)[:3])))
+
+pman = load(os.path.join(home, ".packs-manifest.json")) or {}
+pdest = os.path.join(home, "packs")
+if packs_repo and os.path.isdir(pdest):
+    for name in sorted(os.listdir(pdest)):
+        srcp = os.path.join(packs_repo, name)
+        if not os.path.isdir(srcp) or not os.path.isdir(os.path.join(pdest, name)):
+            continue
+        now = tree_hashes(srcp)
+        rec = pman.get(name)
+        if rec is None:
+            drift.append("pack %s: no manifest (run: cadre sync)" % name)
+            continue
+        changed = [r for r in now if now[r] != rec.get(r)] + [r for r in rec if r not in now]
+        if changed:
+            drift.append("pack %s: %d file(s) changed in the repo since the last lay-down" % (name, len(changed)))
+
+if drift:
+    print("cadre: installed copy is behind the repos — run: cadre sync")
+    for d in drift:
+        print("  " + d)
+    sys.exit(1)
+if not quiet:
+    print("cadre: core and packs in sync with their repos")
+PY
+    ;;
+
+  packs)
+    pr="$(packs_repo)"
+    [ -z "$pr" ] && { echo "no packs repo found"; exit 1; }
+    echo "packs repo: $pr"
+    for d in "$pr"/*/; do
+      [ -d "$d" ] || continue
+      name=$(basename "$d")
+      if [ -d "$HOME/.claude/packs/$name" ]; then
+        echo "  $name   installed"
+      else
+        echo "  $name   available"
+      fi
+    done
+    ;;
+
+  help|--help|-h) usage ;;
+  *) echo "cadre: unknown command '$cmd'"; usage; exit 1 ;;
+esac

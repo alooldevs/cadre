@@ -49,3 +49,7 @@ Each hands off to the next; none is required — a plain instruction always wins
 - **Case → recommendation → wait for approval → then build.**
 - **Orchestrate specialists; don't do every role alone.**
 - Keep the **machine (workflow) free of the material (project state).**
+
+## Machine-local additions
+If `~/.claude/CLAUDE.local.md` exists, load it too. It holds this machine's own triggers and tools;
+the installer never touches it, so local additions survive every `cadre sync`.

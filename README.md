@@ -39,7 +39,18 @@ git clone https://github.com/alooldevs/cadre.git ~/Documents/tools/cadre   # or 
 cd ~/Documents/tools/cadre && ./install.sh
 ```
 This lays the operating model into `~/.claude/` (backing up anything it would replace; it won't overwrite a
-profile you've already chosen). Open any project — Cadre loads at session start.
+profile you've already chosen), and puts the **`cadre` command** on your PATH. Open any project — Cadre
+loads at session start.
+
+## The command
+```
+cadre install    lay the core, then offer each available pack — install or skip
+cadre sync       re-lay core + installed packs from the repos, no prompts
+cadre status     drift report: has a repo changed since the last lay-down?
+cadre packs      available vs installed
+```
+Session start whispers when the installed copy is behind the repos, so drift can't outlive one session.
+Edit the repo, run `cadre sync` — never edit `~/.claude/` directly.
 
 ## Packs (domain cartridges)
 The core stays domain-agnostic; domain knowledge ships as **packs** — `~/.claude/packs/<name>/` with a

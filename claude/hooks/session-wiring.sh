@@ -38,4 +38,12 @@ fi
 for det in "$HOME/.claude/packs"/*/detect.sh; do
   [ -x "$det" ] && "$det" 2>/dev/null
 done
+
+# Self-drift: whisper when the repos have moved past the installed copy.
+crepo=$(python3 -c "import json,os
+try: print(json.load(open(os.path.expanduser('~/.claude/cadre.json'))).get('cadre_repo',''))
+except Exception: print('')" 2>/dev/null)
+if [ -n "$crepo" ] && [ -x "$crepo/bin/cadre" ]; then
+  "$crepo/bin/cadre" status --quiet 2>/dev/null || true
+fi
 exit 0
