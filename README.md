@@ -43,9 +43,12 @@ to move it between machines — just ask the `profile` skill.
 Your profile is **yours**: client data and project specifics never live in it, and your toolset/host are
 detected per-machine, not assumed.
 
-## New project
-Open the repo and say the code word: **`spinup`**. Cadre detects the project, scaffolds its workflow files,
-and walks you in.
+## The code words
+A ladder from idea to wired project — start wherever you actually are:
+- **`warmup`** — just talking: brainstorm, ideas, discussion. Nothing is committed.
+- **`groundwork`** — settle what the project *is* (problem → direction → position → shape) and write its
+  anchor. Works in an empty folder.
+- **`spinup`** — wire the repo: state doc, backlog, open-loops ledger, entry file. Walks you in warm.
 
 ## Layout
 ```
@@ -54,7 +57,9 @@ claude/                 # overlay installed into ~/.claude/
   operating-model.md    # the firm: roles, workflow, altitude (load on demand)
   ringwork.md           # problem → picture → build → show; the alignment invariant
   operating-rules.md    # trigger → artifact; the mid-task checks
-  skills/spinup/        # the "boot a project" code word
+  skills/warmup/        # code word: free exploration, output to the sky
+  skills/groundwork/    # code word: settle the outer rings, write the anchor
+  skills/spinup/        # code word: wire the repo around the anchor
   skills/profile/       # switch / export / import profiles
   memory/
     INDEX.md

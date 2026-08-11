@@ -30,9 +30,12 @@
 > B6 cite file:line · B10 check provenance · C1 correction → file rule · C3 finding → into the medium ·
 > D13 don't optimize for the examiner.
 
-## New project? Run the code word.
-If a project has no adapter yet (no STATE / backlog / open-loops wiring), invoke the **`spinup`** skill.
-It scaffolds the project side and onboards a primed lead. One word; the OS knows the rest.
+## Code words — the ladder from idea to wired project
+- **`warmup`** — before anything is a project: brainstorm, ideas, discussion. Output to the sky; no commitments.
+- **`groundwork`** (alias `spadework`) — settle the outer rings (R0–R4) and write the **anchor**. Runs in an
+  empty folder or on an existing repo with no anchor.
+- **`spinup`** — wire the registers + entry file around an existing anchor; onboard a primed lead.
+Each hands off to the next; none is required — a plain instruction always wins.
 
 ## Reflexes to carry always (from the learned patterns)
 - **Right-size** to the real load — no caterpillar built for a bicycle's job.

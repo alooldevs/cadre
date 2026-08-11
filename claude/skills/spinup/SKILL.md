@@ -42,8 +42,9 @@ into "this project is ready for the workflow." If not already loaded this sessio
      like a true one, so the entry holds only what changes rarely: paths, commands, boundaries.
    If the repo already has equivalents, **adopt them** — don't create duplicates.
    **If an anchor already exists, adopt it and stop — do not restate, summarise, or re-derive it.**
-   If none exists, do not invent one: say so and ask, because an anchor written by the same pass that
-   builds the backlog is just the backlog with a preface.
+   If none exists, do not invent one: stop and point to **`groundwork`** — the anchor is that skill's
+   deliverable, because an anchor written by the same pass that builds the backlog is just the backlog
+   with a preface.
    - Cross-tool pointers (e.g. `.cursor/rules`, Kiro steering → the project's AGENTS.md/STATE doc) are
      written **only for the fallback tools the user actually has** — detect/ask first, never assume.
 3. **Onboard a primed lead** — load the operating model + global learning (user, clients, patterns) so the

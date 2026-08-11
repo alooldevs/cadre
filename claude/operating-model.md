@@ -90,9 +90,11 @@ A project is "wired" when its repo declares:
 The OS plugs into these. Wiring a fresh project = the `spinup` skill. If a repo already has equivalents,
 **adopt its conventions — don't duplicate.**
 
-**Anchor creation has an owner.** The moment outer-ring material (R0–R4) is settled and confirmed in a
-session, writing the anchor is **that session's job** — before registers, before spinup, in `mapping`
-mode. Spinup adopts an anchor; it never writes one, and no session waits for spinup to make it exist.
+**Anchor creation has an owner.** The **`groundwork`** skill (alias `spadework`) settles the outer rings
+(R0–R4) and writes the anchor — before registers, before spinup, in `mapping` mode. Absent the code word,
+the rule still holds: whichever session settles the outer rings writes the anchor, that session. Spinup
+adopts an anchor; it never writes one, and no session waits for spinup to make it exist. Before all of it
+sits **`warmup`** — free exploration whose output goes to the sky, until an idea earns groundwork.
 The same holds for the entry file: a repo with adapter pieces but no root `CLAUDE.md` gets one from the
 session that notices, not from a future spinup run.
 
