@@ -24,8 +24,10 @@ sessions — is an overloaded manager with no team and no memory. Cadre gives it
   happens in — because a rule that is only read does not bind.
 - **A runtime, not just prose.** The rules that can fire on a string or an event are compiled into
   [Claude Code hooks](https://code.claude.com/docs/en/hooks) — scripts the machine runs regardless of
-  whether the model remembers. Shipped so far: no AI co-author trailer on commits (auto-stripped),
-  wiring status injected at session start, and the reply-length rule (D14) enforced at Stop.
+  whether the model remembers. Shipped so far: no AI co-author trailer on commits (auto-stripped);
+  wiring status + stale-STATE warning at session start; the anchor re-injected every 10 turns so the
+  field can't evaporate; and at Stop — reply length (D14), agreement without a change (C2),
+  method-narration (D13), and additions-with-zero-deletions (B9).
 
 ## Requirements
 - [Claude Code](https://docs.claude.com/en/docs/claude-code) installed (terminal, desktop, or an IDE
