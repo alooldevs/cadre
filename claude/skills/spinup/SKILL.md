@@ -17,7 +17,26 @@ into "this project is ready for the workflow." If not already loaded this sessio
    - a STATE doc (source-of-truth mirror: what's built + what's owed),
    - a backlog (intent),
    - an open-loops ledger (handback channel),
-   - a project-memory pointer (domain facts).
+   - a project-memory pointer (domain facts),
+   - the **entry file — `CLAUDE.md` at repo root**. The host reads it first, before anything else, so a
+     project without one starts every session cold. It is **wiring, not state**: it points at the adapter,
+     it never mirrors it. Template:
+
+     ```markdown
+     # <project> — session entry (wiring, not state; the pointed-at files hold the truth)
+
+     Read in this order:
+     1. Anchor: <path> — the whole field; read first, every session
+     2. STATE: <path> — what's built + what's owed (status comes from here + code, never from the backlog)
+     3. Backlog: <path> — intent · Open loops: <path> — findings/owed/decisions, tagged by grain
+     - Project memory: <path> — domain facts for this project
+
+     Run & prove: <exact commands to start it, see it, test it>
+     Standing rules: <boundaries, conventions, what is read-only — only ones specific to this repo>
+     ```
+
+     No status lines, no task lists, no summaries of the anchor in here — a stale entry file reads exactly
+     like a true one, so the entry holds only what changes rarely: paths, commands, boundaries.
    If the repo already has equivalents, **adopt them** — don't create duplicates.
    **If an anchor already exists, adopt it and stop — do not restate, summarise, or re-derive it.**
    If none exists, do not invent one: say so and ask, because an anchor written by the same pass that
@@ -35,6 +54,10 @@ into "this project is ready for the workflow." If not already loaded this sessio
 
 ## Guardrails
 - **Idempotent:** if the adapter already exists, RE-SYNC (reconcile drift) instead of scaffolding.
+- **The entry file is maintained, not just created.** When wiring changes — a path moves, a run/test
+  command changes, a standing rule is added — updating the root `CLAUDE.md` is part of the same pass,
+  not a chore afterwards. If the repo already has a `CLAUDE.md`, adopt it: add the missing wiring,
+  never overwrite what's there.
 - **Generic:** put NO project specifics into the global OS; project state stays in the project's data.
 - **Right-sized:** don't impose heavy structure on a light project.
 - **Anchor-first, and the anchor is never spinup's output.** Wiring a project must not become the thing

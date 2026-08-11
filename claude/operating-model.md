@@ -67,8 +67,10 @@ or session can resume cleanly after a handoff or a usage-limit interruption.
 
 ## Project Adapter — the standard interface every project exposes
 A project is "wired" when its repo declares:
-- an **anchor** (the whole field: what this is for, what is always true of it, where it goes) — **first,
-  and deliberately NOT item-indexed**,
+- an **entry file** (`CLAUDE.md` at repo root) — the host reads it before anything else, so it is how a
+  session finds the adapter at all. **Wiring, not state:** paths to the pieces below, run/prove commands,
+  repo-specific standing rules — it points at the adapter and never mirrors it. Kept current in the same
+  pass as any wiring change,
 - a **STATE doc** (mirror of what's built + what's owed),
 - a **backlog** (intent: what to build / fix),
 - an **open-loops ledger** (handback channel: findings / owed / risks / decisions),
