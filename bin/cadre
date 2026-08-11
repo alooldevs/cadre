@@ -9,12 +9,24 @@ real="$(python3 -c 'import os,sys; print(os.path.realpath(sys.argv[1]))' "$0")"
 SELF="$(cd "$(dirname "$real")" && pwd)"
 REPO="$(dirname "$SELF")"
 CONFIG="$HOME/.claude/cadre.json"
+PACKS_SSH="git@github.com:alooldevs/packs.git"
+PACKS_HTTPS="https://github.com/alooldevs/packs.git"
 
 cfg_get() {
   python3 -c "import json,sys,os
 p=os.path.expanduser('~/.claude/cadre.json')
 try: print(json.load(open(p)).get(sys.argv[1],''))
 except Exception: print('')" "$1"
+}
+
+cfg_write() {
+  python3 -c "import json,sys,os
+p=os.path.expanduser('~/.claude/cadre.json')
+d={}
+try: d=json.load(open(p))
+except Exception: pass
+d[sys.argv[1]]=sys.argv[2]
+json.dump(d, open(p,'w'), indent=2)" "$1" "$2"
 }
 
 packs_repo() {
@@ -50,10 +62,19 @@ case "$cmd" in
     "$REPO/install.sh"
     pr="$(packs_repo)"
     if [ -z "$pr" ]; then
+      dest="$(dirname "$REPO")/packs"
       echo ""
-      echo "No packs repo found. Clone it, then re-run:  git clone git@github.com:alooldevs/packs.git"
-      exit 0
+      echo "No packs repo found — cloning into $dest ..."
+      if git clone --quiet "$PACKS_SSH" "$dest" 2>/dev/null || git clone --quiet "$PACKS_HTTPS" "$dest" 2>/dev/null; then
+        pr="$dest"
+      else
+        echo "Clone failed (no network or no access). Manual fallback:"
+        echo "  git clone $PACKS_SSH   # anywhere"
+        echo "  cadre install          # re-run; it finds the clone"
+        exit 0
+      fi
     fi
+    cfg_write packs_repo "$pr"
     echo ""
     echo "Packs available in $pr:"
     for d in "$pr"/*/; do

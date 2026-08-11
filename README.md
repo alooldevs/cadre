@@ -44,7 +44,7 @@ loads at session start.
 
 ## The command
 ```
-cadre install    lay the core, then offer each available pack — install or skip
+cadre install    lay the core, fetch the packs repo if missing, then offer each pack — install or skip
 cadre sync       re-lay core + installed packs from the repos, no prompts
 cadre status     drift report: has a repo changed since the last lay-down?
 cadre packs      available vs installed
