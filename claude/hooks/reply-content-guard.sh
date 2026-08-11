@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-# Stop — compiled from operating-rules C2 and D13.
+# Stop — compiled from operating-rules C2, D13 and D15.
 # C2: agreement shipped alone ("you're right" with no "Changing now:") gets bounced.
 # D13: method-narration at the human (rule IDs in prose, readback confirms,
-# mode/serving declared in the reply) gets bounced. Both are string triggers.
+# mode/serving declared in the reply) gets bounced.
+# D15: pleasantry openers ("great question") and closers ("hope this helps").
+# All string triggers.
 exec python3 -c "
 import json, sys, os, re
 
@@ -45,6 +47,18 @@ for p in d13_patterns:
             'Cut it — the work carries the method or it did not happen. '
             'Keep only evidence about the subject: file:line, a re-runnable command, a count.')
         break
+
+# D15 — pleasantry opener on the first line, or pleasantry closer on the last.
+first = lines[0].lower() if lines else ''
+last = lines[-1].lower() if lines else ''
+opener = re.search(r'^(great question|good question|sure[!,]|certainly[!,]|absolutely[!,]|happy to help)', first)
+closer = re.search(r'\b(hope this helps|hope that helps|let me know if|feel free to|happy to clarify|anything else\?)', last)
+if opener or closer:
+    matched = (opener or closer).group(0)
+    violations.append(
+        'D15: the reply carries a pleasantry (' + matched + '). Delete the sentence — '
+        'the first line is the answer or the do-able action, and the reply ends when '
+        'the answer is done.')
 
 if violations:
     print(json.dumps({'decision': 'block', 'reason': ' '.join(violations)}))

@@ -263,6 +263,13 @@ The trigger is a count, not a feeling: 15 lines, counted before sending. A long 
 the author's working memory dumped into the chat — the right instinct (record it) pointed at the
 wrong channel. Redirect it; do not merely compress it.
 
+**D15 — The reply opens with a pleasantry/announcement or closes with a pleasantry.** `[thin]`
+→ Delete the sentence. Openers: `great question` · `good question` · `sure!` · `certainly!` ·
+`absolutely!` · `happy to help`. Closers: `hope this helps` · `let me know if` · `feel free to` ·
+`happy to clarify` · `anything else`. The first line is the answer or the do-able action; the reply
+ends when the answer is done. Lexical on purpose — the phrases are string triggers and the check is
+one grep. (Harvested from ayghri/i-have-adhd; their content, our enforcement.)
+
 ---
 
 ## E · When writing or revising a rule
