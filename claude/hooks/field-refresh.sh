@@ -26,7 +26,9 @@ if n % 10:
 root = d.get('cwd') or '.'
 while root not in ('/', '') and not os.path.isdir(os.path.join(root, '.git')):
     root = os.path.dirname(root)
-entry = os.path.join(root, 'CLAUDE.md')
+entry = os.path.join(root, 'AGENTS.md')
+if not os.path.isfile(entry):
+    entry = os.path.join(root, 'CLAUDE.md')
 if not os.path.isfile(entry):
     sys.exit(0)
 m = re.search(r'[Aa]nchor:\s*(\S+)', open(entry).read())

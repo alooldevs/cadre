@@ -8,6 +8,7 @@
 > | ringwork | here |
 > |---|---|
 > | outer rings R0–R4, settled | the **anchor** — written in `mapping` mode |
+> | R4 shape (in · later · never) + the increment loop | the **slices** register — the live slice and its acceptance |
 > | R5 picture | project docs, pointed at by the entry file |
 > | R6 build | `fixing` mode — a backlog item with `Serving:` |
 > | R7 proof · R8 show | Definition of Done + the report |
@@ -75,12 +76,18 @@ or session can resume cleanly after a handoff or a usage-limit interruption.
 
 ## Project Adapter — the standard interface every project exposes
 A project is "wired" when its repo declares:
-- an **entry file** (`CLAUDE.md` at repo root) — the host reads it before anything else, so it is how a
-  session finds the adapter at all. **Wiring, not state:** paths to the pieces below, run/prove commands,
-  repo-specific standing rules — it points at the adapter and never mirrors it. Kept current in the same
-  pass as any wiring change,
+- an **entry file** (`AGENTS.md` at repo root — the cross-tool standard, with `CLAUDE.md` beside it as a
+  one-line pointer for hosts that read that name) — the host reads it before anything else, so it is how a
+  session finds the adapter at all, whichever tool the session runs in. **Wiring, not state:** paths to
+  the pieces below, run/prove commands, repo-specific standing rules — it points at the adapter and never
+  mirrors it. Kept current in the same pass as any wiring change. This file is the **working contract
+  between sessions**: any agent, any vendor, enters through it,
 - a **STATE doc** (mirror of what's built + what's owed),
-- a **backlog** (intent: what to build / fix),
+- a **slices** register (the middle the anchor is too broad for and the backlog too fine for: the
+  capability map — **in · later · never** — the versions/milestones, and the **live slice** with its
+  acceptance criteria). Items serve a slice; slices serve the anchor. This is the file `Serving:` points
+  at — without it, the line names a version that lives nowhere,
+- a **backlog** (intent: what to build / fix — each item serving a slice),
 - an **open-loops ledger** (handback channel: findings / owed / risks / decisions),
 - a **project-memory pointer** (domain facts specific to this project),
 - a **sky** (exploration space: ideas, options, unknowns, tradeoffs from brainstorm and discussion
@@ -120,7 +127,7 @@ scope; it does not patch*) has nowhere to live and evaporates into whichever ite
 **In `fixing` mode, before touching the queue, name what the item serves:**
 
 ```
-Serving: <version / milestone> · <which part of the anchor>.
+Serving: <slice / milestone, from the slices register> · <which part of the anchor>.
 ```
 
 If neither can be named, the item is wrong **or the anchor is incomplete** — say which, and stop. This is

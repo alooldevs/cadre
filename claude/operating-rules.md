@@ -70,7 +70,8 @@ that transfer and the checks mostly do not.
 
 **A9 — The project has registers (STATE / backlog / open-loops) and I am about to start a unit of work.** `[core]`
 → Declare the mode and what the work serves, in one line, before the first call:
-`Mode: mapping | fixing | exploring. Serving: <version / milestone> · <part of the anchor>.` In `mapping`,
+`Mode: mapping | fixing | exploring. Serving: <slice / milestone, from the slices register> · <part of the
+anchor>.` In `mapping`,
 output goes to the anchor and producing backlog items is the failure. In `exploring`, output goes to the
 sky and nothing is promoted in the same pass. In `fixing`, if neither half of `Serving:` can be
 named, the item is wrong **or the anchor is incomplete** — say which, and stop. Fires on the *presence of

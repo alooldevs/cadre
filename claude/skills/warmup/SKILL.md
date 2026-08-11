@@ -6,6 +6,7 @@ description: Free exploration before anything is a project. Use when the human w
 # warmup — before anything is a project
 
 The stage before groundwork. Nothing is decided, nothing is owed, and there may not even be a folder.
+(Inside an existing project, the same move is **`discuss`** — this skill is for when nothing exists yet.)
 Mode is `exploring`: output goes to the **sky**, and producing backlog items, anchor drafts, or plans
 is the failure — convergence here is premature by definition.
 

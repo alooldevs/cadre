@@ -15,14 +15,17 @@ into "this project is ready for the workflow." If not already loaded this sessio
 2. **Scaffold the project adapter + data** (only what's missing; never overwrite):
    - an **anchor** (the whole field: what this is for, what is always true, where it goes) — **first**,
    - a STATE doc (source-of-truth mirror: what's built + what's owed),
-   - a backlog (intent),
+   - a **slices register** (the capability map — in · later · never — the milestones, and the **live
+     slice** with its acceptance; items serve a slice, slices serve the anchor),
+   - a backlog (intent, each item serving a slice),
    - an open-loops ledger (handback channel),
    - a project-memory pointer (domain facts),
    - (the **sky** — exploration space for ideas/options — is part of the adapter but is **created on
      first use**, never scaffolded empty),
-   - the **entry file — `CLAUDE.md` at repo root**. The host reads it first, before anything else, so a
-     project without one starts every session cold. It is **wiring, not state**: it points at the adapter,
-     it never mirrors it. Template:
+   - the **entry file — `AGENTS.md` at repo root** (the cross-tool standard), with **`CLAUDE.md` beside
+     it as a one-line pointer** (`Read AGENTS.md — the session entry.`) for hosts that read that name.
+     The host reads it first, before anything else, so a project without one starts every session cold.
+     It is **wiring, not state**: it points at the adapter, it never mirrors it. Template:
 
      ```markdown
      # <project> — session entry (wiring, not state; the pointed-at files hold the truth)
@@ -30,7 +33,8 @@ into "this project is ready for the workflow." If not already loaded this sessio
      Read in this order:
      1. Anchor: <path> — the whole field; read first, every session
      2. STATE: <path> — what's built + what's owed (status comes from here + code, never from the backlog)
-     3. Backlog: <path> — intent · Open loops: <path> — findings/owed/decisions, tagged by grain
+     3. Slices: <path> — in · later · never; the live slice and its acceptance
+     4. Backlog: <path> — intent · Open loops: <path> — findings/owed/decisions, tagged by grain
      - Project memory: <path> — domain facts for this project
      - Sky: <path> — exploration space: ideas, options, no commitments (if one exists)
 
@@ -59,9 +63,9 @@ into "this project is ready for the workflow." If not already loaded this sessio
 ## Guardrails
 - **Idempotent:** if the adapter already exists, RE-SYNC (reconcile drift) instead of scaffolding.
 - **The entry file is maintained, not just created.** When wiring changes — a path moves, a run/test
-  command changes, a standing rule is added — updating the root `CLAUDE.md` is part of the same pass,
-  not a chore afterwards. If the repo already has a `CLAUDE.md`, adopt it: add the missing wiring,
-  never overwrite what's there.
+  command changes, a standing rule is added — updating the root `AGENTS.md` is part of the same pass,
+  not a chore afterwards. If the repo already has an `AGENTS.md` or `CLAUDE.md`, adopt it: add the
+  missing wiring, never overwrite what's there.
 - **Generic:** put NO project specifics into the global OS; project state stays in the project's data.
 - **Right-sized:** don't impose heavy structure on a light project.
 - **Anchor-first, and the anchor is never spinup's output.** Wiring a project must not become the thing

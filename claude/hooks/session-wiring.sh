@@ -9,10 +9,14 @@ if [ -z "$root" ]; then
   exit 0
 fi
 
-if [ -f "$root/CLAUDE.md" ]; then
+entry=""
+[ -f "$root/AGENTS.md" ] && entry="$root/AGENTS.md"
+[ -z "$entry" ] && [ -f "$root/CLAUDE.md" ] && entry="$root/CLAUDE.md"
+
+if [ -n "$entry" ]; then
   echo "cadre: project entry found at repo root — anchor first, then registers; declare the mode per task (mapping | fixing | exploring)."
   # Stale truth mirror (ringwork: a stale index is worse than none — it gets trusted).
-  state=$(grep -ioE 'STATE:[[:space:]]*[^[:space:]]+' "$root/CLAUDE.md" | head -1 | sed -E 's/^[Ss][Tt][Aa][Tt][Ee]:[[:space:]]*//')
+  state=$(grep -ioE 'STATE:[[:space:]]*[^[:space:]]+' "$entry" | head -1 | sed -E 's/^[Ss][Tt][Aa][Tt][Ee]:[[:space:]]*//')
   if [ -n "$state" ]; then
     case "$state" in /*) sp="$state" ;; *) sp="$root/$state" ;; esac
     if [ -f "$sp" ]; then
@@ -26,5 +30,5 @@ if [ -f "$root/CLAUDE.md" ]; then
     fi
   fi
 else
-  echo "cadre: this repo has NO root CLAUDE.md — the project is unwired. groundwork writes the anchor; spinup wires registers + entry file. Do not build past the missing anchor silently."
+  echo "cadre: this repo has NO root AGENTS.md/CLAUDE.md — the project is unwired. groundwork writes the anchor; spinup wires registers + entry file. Do not build past the missing anchor silently."
 fi

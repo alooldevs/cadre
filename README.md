@@ -54,7 +54,10 @@ A ladder from idea to wired project — start wherever you actually are:
 - **`warmup`** — just talking: brainstorm, ideas, discussion. Nothing is committed.
 - **`groundwork`** — settle what the project *is* (problem → direction → position → shape) and write its
   anchor. Works in an empty folder.
-- **`spinup`** — wire the repo: state doc, backlog, open-loops ledger, entry file. Walks you in warm.
+- **`spinup`** — wire the repo: state doc, slices, backlog, open-loops ledger, entry file
+  (`AGENTS.md` — the cross-tool standard, so any agent enters through the same contract). Walks you in warm.
+- **`discuss`** — anywhere, mid-anything: step out of the work and think. The queue is suspended;
+  nothing becomes scope unless you promote it on exit.
 
 ## Layout
 ```
@@ -65,6 +68,7 @@ claude/                 # overlay installed into ~/.claude/
   operating-rules.md    # trigger → artifact; the mid-task checks
   hooks/                # the runtime: compiled rules that fire on events, not on memory
   skills/warmup/        # code word: free exploration, output to the sky
+  skills/discuss/       # code word: step out of the work, anywhere; promote on exit only
   skills/groundwork/    # code word: settle the outer rings, write the anchor
   skills/spinup/        # code word: wire the repo around the anchor
   skills/profile/       # switch / export / import profiles

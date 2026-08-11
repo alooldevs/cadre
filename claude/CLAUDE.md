@@ -17,8 +17,9 @@
    naming is for the work, not for the reply (D13).
 4. Same moment, same place: settle the **mode** — `mapping` (output goes to the anchor), `fixing` (output
    goes to the registers), or `exploring` (output goes to the sky: ideas and options, no commitments, no
-   queue items) — and in `fixing`, what the item serves: `Serving: <version> · <part of the
-   anchor>`. If neither can be named, the item is wrong or the anchor is incomplete — say which, and stop.
+   queue items) — and in `fixing`, what the item serves: `Serving: <slice, from the slices register> ·
+   <part of the anchor>`. If neither can be named, the item is wrong or the anchor is incomplete — say
+   which, and stop.
    Surface it only when it changes what the human gets; otherwise it is bookkeeping, not news.
 
 > Operating model (roles, delegation, right-sizing): `~/.claude/operating-model.md` — load on demand, not every session.
@@ -31,6 +32,8 @@
 > D13 don't optimize for the examiner.
 
 ## Code words — the ladder from idea to wired project
+- **`discuss`** (alias `brainstorm`) — anywhere, any time, mid-anything: flip to exploring; output to the
+  sky; the queue is suspended; ends with an explicit "promote anything?" — silence promotes nothing.
 - **`warmup`** — before anything is a project: brainstorm, ideas, discussion. Output to the sky; no commitments.
 - **`groundwork`** (alias `spadework`) — settle the outer rings (R0–R4) and write the **anchor**. Runs in an
   empty folder or on an existing repo with no anchor.
