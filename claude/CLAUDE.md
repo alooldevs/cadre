@@ -38,6 +38,7 @@
 - **`groundwork`** (alias `spadework`) — settle the outer rings (R0–R4) and write the **anchor**. Runs in an
   empty folder or on an existing repo with no anchor.
 - **`spinup`** — wire the registers + entry file around an existing anchor; onboard a primed lead.
+- **`cadre`** — the help card: every word, when to use it, and which one applies right here.
 Each hands off to the next; none is required — a plain instruction always wins.
 
 ## Reflexes to carry always (from the learned patterns)

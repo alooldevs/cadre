@@ -58,6 +58,7 @@ A ladder from idea to wired project — start wherever you actually are:
   (`AGENTS.md` — the cross-tool standard, so any agent enters through the same contract). Walks you in warm.
 - **`discuss`** — anywhere, mid-anything: step out of the work and think. The queue is suspended;
   nothing becomes scope unless you promote it on exit.
+- **`cadre`** — the help card: every word, when to use it, and which one applies right where you stand.
 
 ## Layout
 ```
@@ -67,6 +68,7 @@ claude/                 # overlay installed into ~/.claude/
   ringwork.md           # problem → picture → build → show; the alignment invariant
   operating-rules.md    # trigger → artifact; the mid-task checks
   hooks/                # the runtime: compiled rules that fire on events, not on memory
+  skills/cadre/         # code word: the help card — all words + which applies here
   skills/warmup/        # code word: free exploration, output to the sky
   skills/discuss/       # code word: step out of the work, anywhere; promote on exit only
   skills/groundwork/    # code word: settle the outer rings, write the anchor
