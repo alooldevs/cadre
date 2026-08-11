@@ -11,7 +11,7 @@ echo "Installing Cadre into $DEST ..."
 mkdir -p "$DEST"
 
 cd "$SRC"
-find . -type f -print | while IFS= read -r f; do
+find . -type f ! -name '.DS_Store' ! -name '*.cadre-bak.*' -print | while IFS= read -r f; do
   rel="${f#./}"
   target="$DEST/$rel"
   mkdir -p "$(dirname "$target")"
