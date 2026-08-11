@@ -19,6 +19,9 @@ the default or the whole picture. **Detect from the repo, ask if it matters, nev
   are layered in one message; separate and address each.
 - Explicitly says he may not state the problem or solution precisely and **trusts the assistant to extract
   the broader core meaning and repackage it.** Answer the intent, not just the literal words.
+- **Short by default.** Outcome first, a few lines; he asks when he wants depth. A long unrequested reply —
+  especially one walking through the assistant's own reasoning — is the tool talking to itself (D14 in
+  operating-rules makes this a count: 15 lines).
 
 **Values — apply by default**
 - **Lean, no bloat / no over-engineering.** Right-size to the real load; he will name a "caterpillar built

@@ -8,14 +8,16 @@
 2. Read the project's **anchor first** — the direction doc, the whole field — *then* its registers (STATE
    doc + backlog + open-loops ledger, as wired in the repo). Derive status from the STATE doc + code —
    never from stale backlog markers. **The registers serve the anchor; opening the queue first is how a
-   session ends up working in long grass.** If there is no anchor, say so before starting work.
+   session ends up working in long grass.** If there is no anchor, say so before starting work — and if
+   this session settles the outer rings, writing the anchor is this session's job, not spinup's.
 3. Load `~/.claude/operating-rules.md`. Then at the start of **each task** — not each session — name the
    two or three rows that task will actually hit, before the first call that changes anything, and write
    them **into the medium the work happens in**: an assertion, a guard, a readback line, a grep in the
    script. Firing a rule binds; reading one does not — and **narrating one at the human is neither.** The
    naming is for the work, not for the reply (D13).
-4. Same moment, same place: settle the **mode** — `mapping` (output goes to the anchor) or `fixing` (output
-   goes to the registers) — and in `fixing`, what the item serves: `Serving: <version> · <part of the
+4. Same moment, same place: settle the **mode** — `mapping` (output goes to the anchor), `fixing` (output
+   goes to the registers), or `exploring` (output goes to the sky: ideas and options, no commitments, no
+   queue items) — and in `fixing`, what the item serves: `Serving: <version> · <part of the
    anchor>`. If neither can be named, the item is wrong or the anchor is incomplete — say which, and stop.
    Surface it only when it changes what the human gets; otherwise it is bookkeeping, not news.
 

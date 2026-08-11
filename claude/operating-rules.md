@@ -70,8 +70,9 @@ that transfer and the checks mostly do not.
 
 **A9 — The project has registers (STATE / backlog / open-loops) and I am about to start a unit of work.** `[core]`
 → Declare the mode and what the work serves, in one line, before the first call:
-`Mode: mapping | fixing. Serving: <version / milestone> · <part of the anchor>.` In `mapping`, output goes
-to the anchor and producing backlog items is the failure. In `fixing`, if neither half of `Serving:` can be
+`Mode: mapping | fixing | exploring. Serving: <version / milestone> · <part of the anchor>.` In `mapping`,
+output goes to the anchor and producing backlog items is the failure. In `exploring`, output goes to the
+sky and nothing is promoted in the same pass. In `fixing`, if neither half of `Serving:` can be
 named, the item is wrong **or the anchor is incomplete** — say which, and stop. Fires on the *presence of
 registers*, not on a feeling of narrowness: an item-indexed adapter puts every artifact at ground level, so
 head-down is the resting state from minute one rather than a drift that could be noticed. Grain the ledger
@@ -248,6 +249,12 @@ finding is what they came for.
 **The line:** evidence *about the subject* stays — a `file:line`, a command they can re-run, a count, what
 was and wasn't checked. Evidence *about my adherence* goes. B6 and D1 demand the first; this row kills only
 the second. When in doubt: would this sentence still matter if a different person had done the work?
+
+**D14 — The reply runs past 15 lines and no request for depth arrived this session.** `[core]`
+→ Cut to: the outcome first, then only what changes what the human does next. Close with one line —
+`Detail available on: ___` — instead of the detail itself. The trigger is a count, not a feeling: 15
+lines, counted before sending. The human says when they want long; a long unrequested reply is mostly
+the author's own thinking process, which the reader never needed.
 
 ---
 

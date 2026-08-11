@@ -18,6 +18,8 @@ into "this project is ready for the workflow." If not already loaded this sessio
    - a backlog (intent),
    - an open-loops ledger (handback channel),
    - a project-memory pointer (domain facts),
+   - (the **sky** — exploration space for ideas/options — is part of the adapter but is **created on
+     first use**, never scaffolded empty),
    - the **entry file — `CLAUDE.md` at repo root**. The host reads it first, before anything else, so a
      project without one starts every session cold. It is **wiring, not state**: it points at the adapter,
      it never mirrors it. Template:
@@ -30,6 +32,7 @@ into "this project is ready for the workflow." If not already loaded this sessio
      2. STATE: <path> — what's built + what's owed (status comes from here + code, never from the backlog)
      3. Backlog: <path> — intent · Open loops: <path> — findings/owed/decisions, tagged by grain
      - Project memory: <path> — domain facts for this project
+     - Sky: <path> — exploration space: ideas, options, no commitments (if one exists)
 
      Run & prove: <exact commands to start it, see it, test it>
      Standing rules: <boundaries, conventions, what is read-only — only ones specific to this repo>

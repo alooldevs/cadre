@@ -1,11 +1,19 @@
 # Operating Model (project-agnostic — the portable "firm")
 
-> **`ringwork.md` is written to stand alone and deliberately overlaps this file.** It covers how work
-> travels from a problem to a built thing (R0 problem → R5 picture → R6 build → R8 show) and the
-> invariant that prevents the recurring failure: *never move inward past a ring that does not exist.*
-> **The overlap is unreconciled on purpose** — this file was in place throughout the failures it
-> addresses, so it was not allowed to define that file's scope. Reconciling the two (merge, supersede,
-> or keep both) is an open decision for the owner. Where they conflict today, `ringwork.md` wins.
+> **`ringwork.md` is written to stand alone and deliberately overlaps this file.** Ringwork governs how
+> work *moves* (problem → picture → build → show, and the invariant: never move inward past a ring that
+> is live and missing). This file governs where its artifacts *land* (the adapter) and who does what
+> (the firm). Where they conflict, `ringwork.md` wins. The bridge:
+>
+> | ringwork | here |
+> |---|---|
+> | outer rings R0–R4, settled | the **anchor** — written in `mapping` mode |
+> | R5 picture | project docs, pointed at by the entry file |
+> | R6 build | `fixing` mode — a backlog item with `Serving:` |
+> | R7 proof · R8 show | Definition of Done + the report |
+> | step 7 "leave the trail" | the same act as Definition of Done |
+> | assumptions ledger | the open-loops ledger, grained |
+> | exploration mode | `exploring` mode — output to the **sky** |
 
 The lead's job is to **orchestrate specialists and decide** — not to personally execute every function.
 Trustworthy decisions come from delegated depth + persistent memory + the lead's synthesis. This model
@@ -74,16 +82,26 @@ A project is "wired" when its repo declares:
 - a **STATE doc** (mirror of what's built + what's owed),
 - a **backlog** (intent: what to build / fix),
 - an **open-loops ledger** (handback channel: findings / owed / risks / decisions),
-- a **project-memory pointer** (domain facts specific to this project).
+- a **project-memory pointer** (domain facts specific to this project),
+- a **sky** (exploration space: ideas, options, unknowns, tradeoffs from brainstorm and discussion
+  sessions — **created on first use, never scaffolded empty**). Nothing in it is a commitment; a sky
+  entry becomes real only by promotion — to the anchor (a decided direction) or the backlog (a scoped
+  item) — and promotion is a separate, deliberate act. Never work the queue from the sky.
 The OS plugs into these. Wiring a fresh project = the `spinup` skill. If a repo already has equivalents,
 **adopt its conventions — don't duplicate.**
 
-**The last four are registers; the anchor is not.** Registers are indexed by items and answer *what is
+**Anchor creation has an owner.** The moment outer-ring material (R0–R4) is settled and confirmed in a
+session, writing the anchor is **that session's job** — before registers, before spinup, in `mapping`
+mode. Spinup adopts an anchor; it never writes one, and no session waits for spinup to make it exist.
+The same holds for the entry file: a repo with adapter pieces but no root `CLAUDE.md` gets one from the
+session that notices, not from a future spinup run.
+
+**The registers are registers; the anchor and the sky are not.** Registers are indexed by items and answer *what is
 next*. The anchor answers *what this is for* and is the only artifact in the adapter that survives the
 whole project unchanged. **The registers serve the anchor. They never replace it, and no amount of
 register hygiene substitutes for it.**
 
-## Altitude — two modes, and the line that keeps them honest
+## Altitude — three modes, and the line that keeps them honest
 Head-down is correct in a fixing session and wrong in a mapping one. The failure is not that head-down
 exists; it is head-down being the only mode with artifacts, so the lead's job (line: *the lead maps
 scope; it does not patch*) has nowhere to live and evaporates into whichever item is open.
@@ -92,6 +110,10 @@ scope; it does not patch*) has nowhere to live and evaporates into whichever ite
 - **`mapping`** — output goes to the **anchor**, never to the backlog. Scope, direction, whole-field
   reads, "what shouldn't exist here at all". Producing backlog items in this mode is the failure.
 - **`fixing`** — output goes to the **registers**. A scoped, spec'd unit of work with a named done-condition.
+- **`exploring`** — output goes to the **sky**. Brainstorm, ideas, discussion, options held open with
+  tradeoffs. Producing backlog items or anchor edits in this mode is the failure — promotion happens
+  later, deliberately, when the human decides. Not every session is about building; this is where the
+  ones that aren't live.
 
 **In `fixing` mode, before touching the queue, name what the item serves:**
 
