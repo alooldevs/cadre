@@ -5,6 +5,7 @@ Project-specific facts live in each project's own memory, not here.
 
 - **Active profile:** see `active-profile` (a fresh install starts on `profiles/_seed.md`).
 - [Collaboration patterns](collaboration-patterns.md) — mistakes to avoid + good behaviors to repeat (apply to every profile).
+- [Don't optimize for the examiner](collaboration-patterns-addendum-examiner.md) — no method-narration in replies; and where I hold authority, flagging is not deciding.
 - Profiles live in `profiles/` and are switchable/exportable — use the `profile` skill.
 
 On a fresh install: start on the seed, grow the new user's own profile in `profiles/<name>.md` from

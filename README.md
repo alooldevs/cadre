@@ -18,6 +18,10 @@ sessions — is an overloaded manager with no team and no memory. Cadre gives it
 - **Warm starts.** One word — `spinup` — wires any repo into the workflow and onboards a primed lead.
 - **Honest & right-sized.** Code is the source of truth; status is never trusted from stale checkboxes; tools
   are sized to the job.
+- **Ringwork.** How work travels from a problem to a built thing (rings R0–R8), and the one invariant:
+  never move inward past a ring that is live and missing — make it, or name it.
+- **Operating rules.** Enforceable `trigger → artifact` checks that fire mid-task, in the medium the work
+  happens in — because a rule that is only read does not bind.
 
 ## Requirements
 - [Claude Code](https://docs.claude.com/en/docs/claude-code) installed (terminal, desktop, or an IDE
@@ -47,12 +51,15 @@ and walks you in.
 ```
 claude/                 # overlay installed into ~/.claude/
   CLAUDE.md             # session-start ritual
-  operating-model.md    # the firm: roles, workflow, rules
+  operating-model.md    # the firm: roles, workflow, altitude (load on demand)
+  ringwork.md           # problem → picture → build → show; the alignment invariant
+  operating-rules.md    # trigger → artifact; the mid-task checks
   skills/spinup/        # the "boot a project" code word
   skills/profile/       # switch / export / import profiles
   memory/
     INDEX.md
     collaboration-patterns.md
+    collaboration-patterns-addendum-examiner.md
     profiles/_seed.md   # default cartridge (author's working style)
     profiles/_template.md
     active-profile       # which profile is active
