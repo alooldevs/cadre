@@ -38,6 +38,8 @@
 - **`groundwork`** (alias `spadework`) — settle the outer rings (R0–R4) and write the **anchor**. Runs in an
   empty folder or on an existing repo with no anchor.
 - **`spinup`** — wire the registers + entry file around an existing anchor; onboard a primed lead.
+- **`survey`** — read-only reconnaissance, anywhere in a repo's life: what's here, what's drifted,
+  what's latent, what's owed. No edits, no queue items; findings promote only on your say.
 - **`cadre`** — the help card: every word, when to use it, and which one applies right here.
 Each hands off to the next; none is required — a plain instruction always wins.
 

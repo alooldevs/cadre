@@ -58,6 +58,8 @@ A ladder from idea to wired project — start wherever you actually are:
   (`AGENTS.md` — the cross-tool standard, so any agent enters through the same contract). Walks you in warm.
 - **`discuss`** — anywhere, mid-anything: step out of the work and think. The queue is suspended;
   nothing becomes scope unless you promote it on exit.
+- **`survey`** — read-only reconnaissance: what's here, what's drifted, what's latent, what's owed.
+  Nothing gets changed; findings promote only on your say.
 - **`cadre`** — the help card: every word, when to use it, and which one applies right where you stand.
 
 ## Layout
@@ -73,6 +75,7 @@ claude/                 # overlay installed into ~/.claude/
   skills/discuss/       # code word: step out of the work, anywhere; promote on exit only
   skills/groundwork/    # code word: settle the outer rings, write the anchor
   skills/spinup/        # code word: wire the repo around the anchor
+  skills/survey/        # code word: read-only reconnaissance, the whole-scope map
   skills/profile/       # switch / export / import profiles
   memory/
     INDEX.md

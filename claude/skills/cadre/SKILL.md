@@ -18,6 +18,8 @@ cadre — the words
               the anchor; works in an empty folder  (alias: spadework)
   spinup      wire the repo around the anchor: state doc, slices, backlog, open loops,
               entry file; onboards a primed lead
+  survey      read-only reconnaissance: what's here · drifted · latent · owed;
+              nothing changes, findings promote only on your say
   profile     switch / export / import the profile I read you through
   cadre       this card
 ```
