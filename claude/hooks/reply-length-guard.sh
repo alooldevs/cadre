@@ -34,7 +34,11 @@ open(once, 'w').close()
 print(json.dumps({
     'decision': 'block',
     'reason': ('D14: that reply is %d non-empty lines and no depth was requested. '
-               'Resend it short: the outcome first, then only what changes the human'\"'\"'s next move, '
-               'under 15 lines, ending with one line offering the detail.') % len(lines),
+               'The overflow is narration addressed to the wrong reader. Route by audience: '
+               'write the technical trace (what changed, where, why, file:line) into the '
+               'project STATE doc / worklog — that channel is for future sessions and is '
+               'already owed by the Definition of Done. Then resend to the human only: '
+               'the outcome, the cause in one line, and what is on them (a decision, a thing '
+               'to test). End with: Detail: <adapter file>. Redirect, do not compress.') % len(lines),
 }))
 "

@@ -50,6 +50,14 @@ done/not-done from a backlog marker — derive from the STATE doc + code.
 ## Definition of Done (atomic — same pass)
 code changed + STATE doc updated + backlog item retired + any discovery logged to the open-loops ledger.
 
+**The done-report routes by audience.** The adapter and the chat are different channels with different
+readers. The technical trace — what changed, where, why, `file:line` — is written *to future sessions*
+and lands in the STATE doc / worklog as part of this same pass. The chat reply is written *to the
+human*, who is not writing the code: the outcome (`fixed / not fixed / found`), the cause in one line,
+and whatever is on them — a decision, a thing to test. Nothing else, unless depth was asked for;
+`Detail: <adapter file>` replaces the narration. A reply full of implementation steps is the trace
+dumped into the wrong channel, not a thorough report.
+
 ## Right-sizing reflex
 Size every tool/process to its real load. Watch for "a bicycle with a bike engine pretending to be a
 caterpillar" — over-built machinery for a light job (or the reverse). Catch the mismatch early; prefer

@@ -251,11 +251,17 @@ finding is what they came for.
 was and wasn't checked. Evidence *about my adherence* goes. B6 and D1 demand the first; this row kills only
 the second. When in doubt: would this sentence still matter if a different person had done the work?
 
-**D14 — The reply runs past 15 lines and no request for depth arrived this session.** `[core]`
-→ Cut to: the outcome first, then only what changes what the human does next. Close with one line —
-`Detail available on: ___` — instead of the detail itself. The trigger is a count, not a feeling: 15
-lines, counted before sending. The human says when they want long; a long unrequested reply is mostly
-the author's own thinking process, which the reader never needed.
+**D14 — The reply runs past 15 non-empty lines and no request for depth arrived this session.** `[core]`
+→ The overflow is not a length problem; it is narration addressed to the wrong reader. Two channels,
+two audiences: the **adapter** (STATE / worklog / registers) is written *to future sessions* — the
+technical trace, what changed, where, why, `file:line` — and updating it is already owed by the
+Definition of Done. The **chat** is written *to the human*, who is not writing the code; steps and
+implementation narration have zero value there. So: move the trace to the adapter first, then send
+the human only — the outcome (`fixed / not fixed / found`), the cause in one line, and whatever is
+on *them* (a decision, a thing to test). Close with `Detail: <adapter file>` instead of the detail.
+The trigger is a count, not a feeling: 15 lines, counted before sending. A long unrequested reply is
+the author's working memory dumped into the chat — the right instinct (record it) pointed at the
+wrong channel. Redirect it; do not merely compress it.
 
 ---
 
