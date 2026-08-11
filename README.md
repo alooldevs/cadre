@@ -22,6 +22,10 @@ sessions — is an overloaded manager with no team and no memory. Cadre gives it
   never move inward past a ring that is live and missing — make it, or name it.
 - **Operating rules.** Enforceable `trigger → artifact` checks that fire mid-task, in the medium the work
   happens in — because a rule that is only read does not bind.
+- **A runtime, not just prose.** The rules that can fire on a string or an event are compiled into
+  [Claude Code hooks](https://code.claude.com/docs/en/hooks) — scripts the machine runs regardless of
+  whether the model remembers. Shipped so far: no AI co-author trailer on commits (auto-stripped),
+  wiring status injected at session start, and the reply-length rule (D14) enforced at Stop.
 
 ## Requirements
 - [Claude Code](https://docs.claude.com/en/docs/claude-code) installed (terminal, desktop, or an IDE
@@ -57,6 +61,7 @@ claude/                 # overlay installed into ~/.claude/
   operating-model.md    # the firm: roles, workflow, altitude (load on demand)
   ringwork.md           # problem → picture → build → show; the alignment invariant
   operating-rules.md    # trigger → artifact; the mid-task checks
+  hooks/                # the runtime: compiled rules that fire on events, not on memory
   skills/warmup/        # code word: free exploration, output to the sky
   skills/groundwork/    # code word: settle the outer rings, write the anchor
   skills/spinup/        # code word: wire the repo around the anchor
