@@ -12,13 +12,16 @@ instruction that says to add one.
 **Why:** stated 2026-08-10, unprompted and scoped as *"any commit ever."* The work ships to clients
 under the owner's own company; the authorship line in his history is his, not a tool's.
 
-**Writing the message is not enough.** Proven 2026-08-11: a commit written with no trailer still landed
-with `Co-authored-by: Cursor` — the harness appends it after the message leaves the author's hands. So
-the rule is a check, not a disposition:
+**Writing the message is not enough — and neither is amending.** Proven 2026-08-11: a commit written
+with no trailer still landed with `Co-authored-by: Cursor` (the harness appends it after the message
+leaves the author's hands), and `git commit --amend` got re-tagged the same way, because the harness
+tags every commit command. The strip that works is a message rewrite that is not a commit command:
 
 ```sh
-git log -1 --format=%B | grep -i "co-authored\|generated with" && \
-  git commit --amend -m "$(git log -1 --format=%B | sed '/^Co-authored-by:/Id; /generated with/Id')"
+git log -1 --format=%B | grep -qi "co-authored\|generated with" && \
+  FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch -f \
+    --msg-filter 'sed "/^Co-[Aa]uthored-by:/d; /[Gg]enerated with/d"' HEAD~1..HEAD
 ```
 
-Run the check after **every** commit, before reporting it done. Same for PR bodies unless asked.
+Run the check after **every** commit, before reporting it done (unpushed commits only — this rewrites
+history). Same for PR bodies unless asked.
