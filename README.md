@@ -45,7 +45,9 @@ profile you've already chosen). Open any project — Cadre loads at session star
 The core stays domain-agnostic; domain knowledge ships as **packs** — `~/.claude/packs/<name>/` with a
 `detect.sh` that session-wiring runs at every session start. Silent when the project isn't its domain;
 orienting (probe output, contract pointers, gates) when it is. See `claude/packs/README.md` for the
-anatomy. First pack: a Frappe kit — probe, trigger-indexed framework contracts, scope generator.
+anatomy. Packs live in their own repo — [alooldevs/packs](https://github.com/alooldevs/packs) — one
+directory per pack, `./install.sh` lays them all in. First pack: a Frappe kit — probe, trigger-indexed
+framework contracts, scope generator.
 
 ## Profiles (switchable cartridges)
 Cadre ships with a **seed profile** (the author's working style) as the default. A fresh install starts on the
