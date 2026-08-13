@@ -50,6 +50,18 @@ Each hands off to the next; none is required — a plain instruction always wins
 - **Orchestrate specialists; don't do every role alone.**
 - Keep the **machine (workflow) free of the material (project state).**
 
+## The tooling itself — repair channel
+All of this (`~/.claude/` — rules, hooks, skills, packs) is a **disposable installed copy**; `cadre sync`
+overwrites it. The source of truth is two git repos, whose locations are in `~/.claude/cadre.json`
+(`cadre_repo`, `packs_repo`). When a defect or an improvement **in the tooling itself** surfaces while
+working on a project:
+- **Never fix it in `~/.claude/**`** — the fix dies on the next sync. Exceptions that are yours to edit:
+  `CLAUDE.local.md` and `memory/` (living learning, harvested back to the repo later).
+- **Fix it at the repo**, run `cadre sync`, and commit in that repo — message naming what surfaced it.
+- **If fixing now would derail the task**, log one line in the current project's open-loops ledger,
+  tagged `tooling:cadre` or `tooling:<pack>`, naming the file it concerns. The human sweeps those later.
+- `cadre status` answers "does installed match the repos" at any time.
+
 ## Machine-local additions
 If `~/.claude/CLAUDE.local.md` exists, load it too. It holds this machine's own triggers and tools;
 the installer never touches it, so local additions survive every `cadre sync`.
