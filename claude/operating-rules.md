@@ -80,6 +80,14 @@ head-down is the resting state from minute one rather than a drift that could be
 too — `item` to the queue, `direction` to the anchor, `human` to the human — and never rewrite a
 `direction` finding as an `item` line.
 
+**A10 — The lead is about to take new scope, and the STATE doc's `last outside read:` is more than 5
+working sessions or 3 days old — or absent.**
+→ Propose it first, in one line: a cold session (or fresh chat) given **only the docs** — anchor, entry
+file, contract, STATE — read against the code, findings back as a list. Then record `last outside read:
+<date>` in STATE. The lead is the only unaudited node and its errors travel furthest; in the first real
+co-working run, an outside reader found six defects in documents the lead had maintained all day. The
+trigger is a recorded date, not a feeling of due diligence.
+
 ---
 
 ## B · Before an action that changes state
@@ -156,6 +164,21 @@ then confirmed against those same measurements cannot fail that test.
 **B15 — A command returned and I am about to proceed on its exit status.**
 → Read the output lines. Warnings count. One line of otherwise-ignored output is often the only
 thing that reports the damage.
+
+**B16 — About to repeat, brief on, or act on a claim produced by another session or agent.** `[core]`
+→ Re-derive it at the boundary — run one check that could find it false (an import, a count, a grep
+*read*, a test) — or write `relayed, unverified` in the same sentence that carries it. B6's discipline
+("recalled, unverified") applied to inter-agent traffic. In the first co-working run every unchecked
+relay was wrong or nearly wrong: "the spine has landed" on an app that did not import; a migrate that
+installed nothing reporting success because a timestamp matched.
+
+**B17 — About to send a brief to a worker session.**
+→ Two gates, both mechanical. (1) The brief is generated from the nine-field checklist (read order ·
+landed-verified · left · rulings · paths owned · **paths forbidden** · exclusive resources + holders ·
+standard of done · report shape); **paths-forbidden may not be empty** — it is the field that makes a
+misroute contradict itself on arrival. (2) The recipient's identity is confirmed from its own words
+this session, never by position in a roster — session names do not survive restarts, and two of three
+briefs assigned by position went to the wrong session.
 
 ---
 

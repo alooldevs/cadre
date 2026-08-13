@@ -20,20 +20,21 @@ The lead's job is to **orchestrate specialists and decide** — not to personall
 Trustworthy decisions come from delegated depth + persistent memory + the lead's synthesis. This model
 carries **no project state** (that lives in the project's data).
 
-## Roles — invoked on-demand, scoped; none are standing
-| Role | Charter | Runs as |
-|---|---|---|
-| **Lead** (me) | Own the human relationship; delegate; synthesize; decide | the active session |
-| **Reconciler** | Keep code ↔ STATE doc ↔ backlogs in harmony; report drift | Explore / read-only subagent |
-| **Auditor / QA** | Verify "done" claims vs code; run owed QA; pass/fail | subagent (reads code, runs tests) |
-| **Architect** | Cross-cutting design → a design doc + recommendation | Plan / design agent |
-| **Researcher** | Outward intelligence: tools, ecosystem, domain, competitors | web-capable subagent — **on-demand only** (summoned for a specific question, never standing) |
-| **Advisors** | Domain depth (financial, UX, framework) on the decision at hand | focused subagent / skill |
-| **Pattern / Health** | Scan code + history for systemic issues & opportunities | subagent (periodic) |
-| **Builders / Fixers** | Execute scoped, spec'd tasks | engineer agents / build sessions |
+## Roles — three shapes observed in real runs; the rest are hats
+Re-derived 2026-08-13 from the first real co-working run, replacing an eight-role table that described
+function calls. Three shapes actually occurred:
 
-Delegation isn't free — each agent starts cold and costs budget. Delegate when depth or parallelism earns
-it. A manager who delegates *everything* is as broken as one who delegates nothing; the skill is the judgment.
+| Shape | Charter | Runs as |
+|---|---|---|
+| **Lead** (me) | Own the human relationship; map scope; brief workers; verify claims at boundaries; decide. Writes no code | the coordinating session |
+| **Owner / builder** | A scope with a name on it: builds, tests, keeps its registers, **refuses what contradicts its brief** | a persistent worker session the human opens |
+| **Outside reader** | Reads the lead's artifacts cold — anchor, entry file, contract, STATE — against the code; finds what the author cannot | a fresh session given only the docs (see *the lead is audited too*, below) |
+
+The old specialist roles (reconciler, auditor, architect, researcher, advisors, pattern/health) are
+**hats, not team members** — summoned as subagents when the work does not outlive the answer, gone when
+it returns. Delegation isn't free — each agent starts cold and costs budget. Delegate when depth or
+parallelism earns it. A manager who delegates *everything* is as broken as one who delegates nothing;
+the skill is the judgment.
 
 ## Workflow cadence
 **capture → triage → delegate → synthesize → decide**
@@ -68,6 +69,53 @@ the cheapest tool that does it well; reserve premium/scarce capacity for high-le
 Work may arrive via different tools/sessions. The **code + STATE doc/git are the truth** — never assume one
 tool authored all changes; reconcile from them. Keep the STATE doc + open-loops ledger current so any tool
 or session can resume cleanly after a handoff or a usage-limit interruption.
+
+## Co-working — when the work is a team, not a function call
+Delegation has two shapes, split by one rule: **does the work outlive the answer?** No → a subagent
+(short, invisible, read-only fan-out; returns once and is gone). Yes → a **worker session**: persistent,
+addressable, colliding, fallible — and visible. The lead **proposes** the team shape — how many tracks,
+what each owns, which resources are exclusive and who holds them — and **the human opens the sessions**
+as separate chats. Visibility is the point; a lead that spawns its own workers has hidden them again.
+None of this machinery lives in the project adapter — it is method, not project state.
+
+**Authority.** A worker answers to its own human first, the lead second. A worker refusing scope its
+human has closed, or refusing to route around a permission wall via a peer (that is laundering), is
+behaving correctly — write briefs expecting it.
+
+**Ownership belongs to the scope, not the session.** Record it in the repo (contract or STATE) with the
+session as *current occupant*, not owner. Sessions die mid-work — usage cutoffs killed eight in the
+first real run — and **`vacant` is a legal state**: the scope stays, the code stays, the lead detects
+the death (a session missing from the roster is inferred dead, never assumed alive) and reassigns.
+
+**Identity is confirmed, never inferred.** Session names change across restarts; position in a list is
+not identity. Confirm from the session's own transcript before assigning — two of three briefs assigned
+by position went to the wrong recipient.
+
+**Exclusive resources are named before the parallelism starts.** A shared site's migrate, a deploy
+target, a port, a lockfile, a shared branch. Parallelism does not create them — it reveals what was
+always secretly exclusive, which is why a single-writer model has no word for them. Name each, name its
+holder, and put the warning **where a fresh session reads first** (the entry file), not only in a
+contract document.
+
+**Claims crossing a session boundary arrive `relayed, unverified`.** The lead re-derives before passing
+anything upward or into a brief (operating-rules B16). In the first run, every unchecked relay was wrong
+or nearly wrong — "the spine has landed" on an app that did not import.
+
+**The brief is generated, not freeform** (A6 — twelve hand-written briefs is a generator nobody wrote).
+Nine fields, answered as a checklist: read order · what has landed (verified by the lead, not reported) ·
+what is left · rulings already made, so they are not relitigated · paths owned · **paths forbidden** ·
+each exclusive resource and its holder · the standard of done · the shape of the report back.
+Paths-forbidden is mandatory before all else: it is the field that makes a misrouted brief contradict
+itself on arrival at the wrong recipient — detection by structure, not vigilance.
+
+**The lead is audited too.** Nothing else checks the node whose errors travel furthest — in the first
+run every material save came from below, and every bad call was the lead asserting from a check that
+could not have found the truth. So the outside read runs on a count, not a feeling: the STATE doc
+carries `last outside read: <date>`; when it is more than **5 working sessions or 3 days** old and the
+lead is about to take new scope, propose the read first (operating-rules A10). And corrections flowing
+upward are first-class, not politeness: a finding that the **method** is wrong goes to the ledger as
+`direction` grain or through the tooling channel — the bar for keeping one is that it changed what the
+lead did.
 
 ## Profiles & environment (the product adapts to whoever installs it)
 - **Profiles are switchable cartridges** (like toggling between tool modes). The *active* profile drives how

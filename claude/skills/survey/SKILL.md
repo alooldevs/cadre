@@ -34,3 +34,10 @@ a word — never a fix to whatever was noticed along the way.
 
 Their currency, short: what's here · what's drifted · what's latent · what's owed — then the one
 question. Negative first inside each. No method narration.
+
+## The exit — name what the map makes possible
+
+One line, after "promote anything?": the next move the map itself points at — `groundwork` if there is
+no anchor, `spinup` if the adapter isn't wired, a team shape if the scopes are separable enough to own
+concurrently. A capability nobody is told about does not exist; every code word ends by naming the
+next one that just became available.

@@ -22,14 +22,16 @@
    which, and stop.
    Surface it only when it changes what the human gets; otherwise it is bookkeeping, not news.
 
-> Operating model (roles, delegation, right-sizing): `~/.claude/operating-model.md` — load on demand, not every session.
+> Operating model (roles, delegation, right-sizing): `~/.claude/operating-model.md` — load on demand, not
+> every session. Load its **§ Co-working** the moment more than one session will touch the repo — it
+> holds the team rules: scope ownership, identity, exclusive resources, the brief, the outside read.
 > **Ringwork** (how work moves from problem → picture → build → show; the alignment invariant):
 > `~/.claude/ringwork.md` — load when starting anything new, when a build is about to begin, or when
 > the human sounds misaligned about what was delivered.
 > **Operating rules** (trigger → artifact; the mid-task checks): `~/.claude/operating-rules.md` — per
 > step 3. `[core]` rows first: A1 done-condition · A6 use the generator · A9 mode + what it serves ·
-> B6 cite file:line · B10 check provenance · C1 correction → file rule · C3 finding → into the medium ·
-> D13 don't optimize for the examiner.
+> B6 cite file:line · B10 check provenance · B16 re-derive relayed claims · C1 correction → file rule ·
+> C3 finding → into the medium · D13 don't optimize for the examiner.
 
 ## Code words — the ladder from idea to wired project
 - **`discuss`** (alias `brainstorm`) — anywhere, any time, mid-anything: flip to exploring; output to the

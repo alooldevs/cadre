@@ -28,3 +28,7 @@ left behind.
 
 If work was interrupted mid-task, resume it where it stood — the discussion changed nothing unless
 something was promoted.
+
+If what got promoted changes the shape of the work — a new slice, a scope big enough to be its own
+track — say so in one line as the door closes. Naming what just became possible is part of the exit;
+a capability nobody is told about does not exist.

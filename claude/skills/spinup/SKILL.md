@@ -58,7 +58,14 @@ into "this project is ready for the workflow." If not already loaded this sessio
    `human`). Do NOT deep-audit everything (meaningless at once). **Do not convert the anchor into
    backlog items** — the anchor is read at every session start; a backlog that restates it has replaced
    the whole field with a queue, which is the failure this step most often causes.
-5. **Report** — to the human: "workflow is live, here's where we stand, here's what I'd do first."
+5. **Report, then propose the team shape** — to the human: "workflow is live, here's where we stand,
+   here's what I'd do first." Then, because a capability nobody is told about does not exist: propose
+   how this project wants to be worked — **how many concurrent tracks** (one is a fine answer), **what
+   each would own** (paths, never overlapping), **which resources are exclusive** (a shared site's
+   migrate, a port, a deploy target) **and who holds them**. If more than one track earns it, tell the
+   human to **open the workers as separate visible chats** — the lead proposes and briefs; the human
+   opens; visibility is the point (see operating-model.md § Co-working). Exclusive-resource warnings go
+   into the entry file, where a fresh session reads first.
 
 ## Guardrails
 - **Idempotent:** if the adapter already exists, RE-SYNC (reconcile drift) instead of scaffolding.
