@@ -97,8 +97,7 @@ I cannot write A1's done-condition). `[core]`
 a direction until a done-condition can be written. One-reply finish is allowed only when the *right
 thing* is in view (A2's class, not the nearest handle). A thin close so the turn looks finished is
 the failure. `Side Quest` / `aside` stay in the chat and die with it; `discuss` may go to the sky — never
-the reverse, and never STATE. `/btw` is the harness mini-chat; treat that pocket as talk too, but do
-not steal the command.
+the reverse, and never STATE.
 
 ---
 
@@ -294,7 +293,7 @@ the second. When in doubt: would this sentence still matter if a different perso
   long reply into STATE as a second copy of the chat — the adapter mirrors the work.
 - **No work this turn:** this was conversation. Resend weighted-short (the class, not the example).
   **Do not touch STATE, the sky, or any register** — a long chat is not a reason to write the adapter.
-- **`discuss` / `Side Quest` / `/btw` (harness) / requested depth:** stand down. Talk is allowed to be
+- **`discuss` / `Side Quest` / requested depth:** stand down. Talk is allowed to be
   long; that is not a dump.
 The trigger is a count. The correction depends on whether there was a job.
 
