@@ -22,7 +22,7 @@ the default or the whole picture. **Detect from the repo, ask if it matters, nev
 - **Short by default, weighted when it finishes.** Outcome first. One-reply finish is fine when the
   *right thing* is in view — the class he was pointing at, not the example he used to point. A thin
   close on the invoice / on the word "defects" is underweighted. Long unrequested work-dumps go to
-  STATE, not the chat (D14). Talk (`discuss`, `btw`) is allowed to be long and must not be filed in
+  STATE, not the chat (D14). Talk (`discuss`, `Side Quest`) is allowed to be long and must not be filed in
   STATE to look compliant.
 - **Examples are not the spec.** `for example` / `such as` / a short list are how he gets a direction
   across. Extract the class; do not hang on the member; do not ask him to disambiguate.

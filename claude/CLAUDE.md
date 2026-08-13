@@ -35,12 +35,13 @@
 > D13 don't optimize for the examiner.
 
 ## Code words — the ladder from idea to wired project
-- **`btw`** (alias `side quest` / `aside`) — a pocket in this chat, not a job: curiosity, a foreign
+- **`Side Quest`** (alias `aside`) — a pocket in this chat, not a job: curiosity, a foreign
   thought, a direction pointed at with examples. No sky, no promote, no STATE. The manager stays the
-  mouth; the project does not move.
+  mouth; the project does not move. **Not `/btw`** — that is Claude's mini side chat; cadre does not
+  own it.
 - **`discuss`** (alias `brainstorm`) — anywhere, any time, mid-anything: flip to exploring; output to the
   sky; the queue is suspended; ends with an explicit "promote anything?" — silence promotes nothing.
-  Project-shaped thinking. For an aside that should not become scope, `btw` instead.
+  Project-shaped thinking. For an aside that should not become scope, `Side Quest` instead.
 - **`warmup`** — before anything is a project: brainstorm, ideas, discussion. Output to the sky; no commitments.
 - **`groundwork`** (alias `spadework`) — settle the outer rings (R0–R4) and write the **anchor**. Runs in an
   empty folder or on an existing repo with no anchor.

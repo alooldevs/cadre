@@ -11,8 +11,8 @@ Print the table, then the state line. Nothing else — this is a card, not a lec
 
 ```
 cadre — the words
-  btw         a pocket in this chat, not a job; no sky, no promote, no STATE
-              (alias: side quest, aside)
+  Side Quest  a pocket in this chat, not a job; no sky, no promote, no STATE
+              (alias: aside). Not /btw — that is Claude's mini side chat.
   discuss     step out of the work, anywhere, mid-anything; the queue suspends and
               nothing becomes scope unless you promote it on exit  (alias: brainstorm)
   warmup      nothing exists yet — no folder, no concept; just talking, output to the sky

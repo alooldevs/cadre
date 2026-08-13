@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # UserPromptSubmit — flags for the D14 reply-length guard.
 # depth: human asked for a long reply this turn (one-shot).
-# talk:  discuss / btw / warmup — conversation, not a job; persists until a work prompt.
+# talk:  discuss / Side Quest / warmup / Claude's /btw mini-chat — not a job;
+# persists until a work prompt.
 exec python3 -c "
 import json, sys, os, re
 

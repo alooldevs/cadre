@@ -91,13 +91,14 @@ file, contract, STATE — read against the code, findings back as a list. Then r
 co-working run, an outside reader found six defects in documents the lead had maintained all day. The
 trigger is a recorded date, not a feeling of due diligence.
 
-**A11 — The prompt is not a unit of work** (`discuss` · `btw` · `side quest` · a question · curiosity ·
+**A11 — The prompt is not a unit of work** (`discuss` · `Side Quest` · `aside` · a question · curiosity ·
 I cannot write A1's done-condition). `[core]`
 → This is not a job. Do not update STATE, do not enqueue, do not ship `done`. Treat the utterance as
 a direction until a done-condition can be written. One-reply finish is allowed only when the *right
 thing* is in view (A2's class, not the nearest handle). A thin close so the turn looks finished is
-the failure. `btw` / `aside` stay in the chat and die with it; `discuss` may go to the sky — never
-the reverse, and never STATE.
+the failure. `Side Quest` / `aside` stay in the chat and die with it; `discuss` may go to the sky — never
+the reverse, and never STATE. `/btw` is the harness mini-chat; treat that pocket as talk too, but do
+not steal the command.
 
 ---
 
@@ -293,7 +294,8 @@ the second. When in doubt: would this sentence still matter if a different perso
   long reply into STATE as a second copy of the chat — the adapter mirrors the work.
 - **No work this turn:** this was conversation. Resend weighted-short (the class, not the example).
   **Do not touch STATE, the sky, or any register** — a long chat is not a reason to write the adapter.
-- **`discuss` / `btw` / requested depth:** stand down. Talk is allowed to be long; that is not a dump.
+- **`discuss` / `Side Quest` / `/btw` (harness) / requested depth:** stand down. Talk is allowed to be
+  long; that is not a dump.
 The trigger is a count. The correction depends on whether there was a job.
 
 **D15 — The reply opens with a pleasantry/announcement or closes with a pleasantry.** `[thin]`
