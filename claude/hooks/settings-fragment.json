@@ -10,8 +10,9 @@
     "UserPromptSubmit": [
       {
         "hooks": [
-          { "type": "command", "command": "$HOME/.claude/hooks/depth-flag.sh" },
-          { "type": "command", "command": "$HOME/.claude/hooks/field-refresh.sh" }
+                { "type": "command", "command": "$HOME/.claude/hooks/depth-flag.sh" },
+                { "type": "command", "command": "$HOME/.claude/hooks/example-class.sh" },
+                { "type": "command", "command": "$HOME/.claude/hooks/field-refresh.sh" }
         ]
       }
     ],

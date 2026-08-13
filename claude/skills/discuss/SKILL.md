@@ -9,6 +9,9 @@ The mid-anything counterpart to `warmup`. Work is the default and needs no word;
 work is the exception, so it gets one.** Saying `discuss` (or `brainstorm`) flips the session to
 `exploring` mode wherever it stands — mid-build, mid-fix, day one or day ninety.
 
+If the thought is not project-shaped — just curious, foreign, a rant, an aside — that is **`btw`**,
+not this. `discuss` still ends with "promote anything?"; `btw` does not.
+
 ## What flips
 
 - **Output goes to the sky.** Not the anchor, not the backlog, not the code.

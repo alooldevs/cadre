@@ -29,13 +29,18 @@
 > `~/.claude/ringwork.md` — load when starting anything new, when a build is about to begin, or when
 > the human sounds misaligned about what was delivered.
 > **Operating rules** (trigger → artifact; the mid-task checks): `~/.claude/operating-rules.md` — per
-> step 3. `[core]` rows first: A1 done-condition · A6 use the generator · A9 mode + what it serves ·
-> B6 cite file:line · B10 check provenance · B16 re-derive relayed claims · C1 correction → file rule ·
-> C3 finding → into the medium · D13 don't optimize for the examiner.
+> step 3. `[core]` rows first: A1 done-condition · A2 examples are not the class · A6 use the generator ·
+> A9 mode + what it serves · A11 utterance is not a job · B6 cite file:line · B10 check provenance ·
+> B16 re-derive relayed claims · C1 correction → file rule · C3 finding → into the medium ·
+> D13 don't optimize for the examiner.
 
 ## Code words — the ladder from idea to wired project
+- **`btw`** (alias `side quest` / `aside`) — a pocket in this chat, not a job: curiosity, a foreign
+  thought, a direction pointed at with examples. No sky, no promote, no STATE. The manager stays the
+  mouth; the project does not move.
 - **`discuss`** (alias `brainstorm`) — anywhere, any time, mid-anything: flip to exploring; output to the
   sky; the queue is suspended; ends with an explicit "promote anything?" — silence promotes nothing.
+  Project-shaped thinking. For an aside that should not become scope, `btw` instead.
 - **`warmup`** — before anything is a project: brainstorm, ideas, discussion. Output to the sky; no commitments.
 - **`groundwork`** (alias `spadework`) — settle the outer rings (R0–R4) and write the **anchor**. Runs in an
   empty folder or on an existing repo with no anchor.

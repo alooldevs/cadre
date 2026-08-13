@@ -77,6 +77,8 @@ A ladder from idea to wired project — start wherever you actually are:
   (`AGENTS.md` — the cross-tool standard, so any agent enters through the same contract). Walks you in warm.
 - **`discuss`** — anywhere, mid-anything: step out of the work and think. The queue is suspended;
   nothing becomes scope unless you promote it on exit.
+- **`btw`** — a pocket in the same chat, not a job. Curiosity, a foreign thought, a direction.
+  No sky, no promote, no STATE. (alias: `side quest`)
 - **`survey`** — read-only reconnaissance: what's here, what's drifted, what's latent, what's owed.
   Nothing gets changed; findings promote only on your say.
 - **`cadre`** — the help card: every word, when to use it, and which one applies right where you stand.
@@ -92,6 +94,7 @@ claude/                 # overlay installed into ~/.claude/
   skills/cadre/         # code word: the help card — all words + which applies here
   skills/warmup/        # code word: free exploration, output to the sky
   skills/discuss/       # code word: step out of the work, anywhere; promote on exit only
+  skills/btw/           # code word: a pocket, not a job; no sky, no promote
   skills/groundwork/    # code word: settle the outer rings, write the anchor
   skills/spinup/        # code word: wire the repo around the anchor
   skills/survey/        # code word: read-only reconnaissance, the whole-scope map

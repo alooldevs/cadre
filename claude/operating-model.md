@@ -58,6 +58,9 @@ human*, who is not writing the code: the outcome (`fixed / not fixed / found`), 
 and whatever is on them — a decision, a thing to test. Nothing else, unless depth was asked for;
 `Detail: <adapter file>` replaces the narration. A reply full of implementation steps is the trace
 dumped into the wrong channel, not a thorough report.
+**STATE is not a bin for overflow chat.** It updates when work happened, as this definition already
+required. A long reply during talk is not a done-report and does not get filed in the adapter to
+satisfy D14.
 
 ## Right-sizing reflex
 Size every tool/process to its real load. Watch for "a bicycle with a bike engine pretending to be a

@@ -19,9 +19,13 @@ the default or the whole picture. **Detect from the repo, ask if it matters, nev
   are layered in one message; separate and address each.
 - Explicitly says he may not state the problem or solution precisely and **trusts the assistant to extract
   the broader core meaning and repackage it.** Answer the intent, not just the literal words.
-- **Short by default.** Outcome first, a few lines; he asks when he wants depth. A long unrequested reply —
-  especially one walking through the assistant's own reasoning — is the tool talking to itself (D14 in
-  operating-rules makes this a count: 15 lines).
+- **Short by default, weighted when it finishes.** Outcome first. One-reply finish is fine when the
+  *right thing* is in view — the class he was pointing at, not the example he used to point. A thin
+  close on the invoice / on the word "defects" is underweighted. Long unrequested work-dumps go to
+  STATE, not the chat (D14). Talk (`discuss`, `btw`) is allowed to be long and must not be filed in
+  STATE to look compliant.
+- **Examples are not the spec.** `for example` / `such as` / a short list are how he gets a direction
+  across. Extract the class; do not hang on the member; do not ask him to disambiguate.
 
 **Shape for a small working memory** (he has ADHD; harvested from ayghri/i-have-adhd, 2026-08-11).
 Five facts drive the shape: working memory is small — nothing off-screen survives, never say "keep in
